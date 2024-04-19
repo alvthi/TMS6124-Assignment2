@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <title>
+    Assignment 2
+  </title>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+
+<body>
+
+
+  <div class="centercontainer">
+    <header id="header">
+
+      <!--body title-->
+      <div class="body_title">
+        <img src="images/unimas_logo.webp" class="logo" alt="logo">
+        <p>E-portfolio</p>
+      </div>
+      <!--end of body title-->
+
+
+
+
+
+      <!--body navigation/directory-->
+      <div class="directory">
+        <ul>
+          <li><a href="#home" class="navigation_text">Home</a></li>
+          <li><a href="#aboutme" class="navigation_text">About</a></li>
+          <li><a href="#contactme" class="navigation_text">Contact</a></li>
+		  <li><a href="#vid" class="navigation_text">Video</a></li>
+        </ul>
+      </div>
+      <!--end of body navigation/directory-->
+    </header>
+
+
+    <!--body home-->
+    <div id="home">
+      <img id="img" src="images/ic.webp" class="house" alt="ic_photo">
+      <audio id="audio" src="audio/Yup_that-s_me_1.wav">
+      </audio>
+      <!--audio playback-->
+      <script>
+        var audio = document.getElementById("audio");
+        var img = document.getElementById("img");
+
+        function play() {
+          audio.play();
+        }
+
+        function stop() {
+          audio.pause();
+        }
+
+        img.addEventListener('click', play);
+        img.addEventListener('mouseover', play);
+        img.addEventListener('mouseout', stop);
+      </script>
+    </div>
+    <!--end of body home-->
+
+
+
+
+
+
+
+    <div id="aboutme">
+      <div class="aboutmetitle">
+        <b>About Me</b>
+      </div>
+
+
+      <div class="image-slideshow">
+
+        <div class="image fade">
+          <img src="images/slide1.webp" style="width:800px" alt="slide_1">
+        </div>
+
+        <div class="image fade">
+          <img src="images/slide2.webp" style="width:800px" alt="slide_2">
+        </div>
+
+        <div class="image fade">
+          <img src="images/slide3.webp" style="width:800px" alt="slide_3">
+        </div>
+
+        <div class="image fade">
+          <img src="images/slide4.webp" style="width:800px" alt="slide_4">
+        </div>
+
+      </div>
+      <script>
+        let index = 0;
+        displayImages();
+        function displayImages() {
+          let i;
+          const images = document.getElementsByClassName("image");
+          for (i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+          }
+          index++;
+          if (index > images.length) {
+            index = 1;
+          }
+          images[index - 1].style.display = "block";
+          setTimeout(displayImages, 5000);
+        }
+      </script>
+    </div>
+
+
+
+    <div id="contactme">
+      <b>Contact Me</b>
+
+
+      <div class="contact_form">
+        <form>
+          <label>Name</label>
+          <input type="text" placeholder="Your name..">
+
+          <label>Gender</label>
+          <select>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+
+          <label>Email</label>
+          <input type="text" placeholder="Your email..">
+
+
+          <label>Message</label>
+          <textarea placeholder="How may we help you?"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+    </div>
+
+    <div class="vid" id="vid">
+      <h2>Quick guide</h2>
+      <video controls>
+        <source src="video/quick_guide_vid1.webm" type="video/webm">
+      </video>
+    </div>
+
+    <div class="bottom_footer">
+      <p class="copyright_statement">
+        <span class="text_left">
+          ©Copyright. A student production.
+        </span>
+
+        <span class="text_right">
+          <a href="#header">
+            TOP
+          </a>
+        </span>
+      </p>
+    </div>
+
+
+
+  </div>
+
+
+
+
+</body>
+
+</html>
